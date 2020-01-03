@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    logo: 'AB',
     title: 'Portfolio Aleks Brymora',
     author: 'Aleks Brymora'
   },
