@@ -1,3 +1,10 @@
 module.exports = {
-  /* Your site config here */
+  siteMetadata: {
+    title: 'Portfolio Aleks Brymora',
+    author: 'Aleks Brymora'
+  },
+  plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
+  ]
 };
