@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     logo: 'AB',
-    title: 'Portfolio Aleks Brymora',
+    title: 'Aleks Brymora',
     author: 'Aleks Brymora'
   },
   plugins: [
