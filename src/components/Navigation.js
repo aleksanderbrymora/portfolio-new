@@ -2,14 +2,22 @@ import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 
 import navigationStyles from '../styles/navigation.module.sass';
-import profile from '../img/profile.jpg';
 
 export default () => {
   const data = useStaticQuery(graphql`
     query {
-      site {
-        siteMetadata {
-          logo
+      contentfulMetadata {
+        profilePicture {
+          image {
+            fixed(
+              resizingBehavior: THUMB
+              cropFocus: CENTER
+              width: 300
+              height: 300
+            ) {
+              src
+            }
+          }
         }
       }
     }
@@ -19,8 +27,11 @@ export default () => {
     <header className={navigationStyles.navigation}>
       <div>
         <Link to={'/'}>
-          <h1>{data.site.siteMetadata.logo}</h1>
-          <img src={profile} alt="profile picture" />
+          <h1>AB</h1>
+          <img
+            src={`https:${data.contentfulMetadata.profilePicture.image.fixed.src}`}
+            alt="profile"
+          />
         </Link>
       </div>
       <nav className={navigationStyles.navLinks}>
