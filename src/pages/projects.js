@@ -79,12 +79,17 @@ export default () => {
             <h1>{active.title}</h1>
             <div className={style.dateLinks}>
               <p>{active.createdAt}</p>
-              <a href={active.hostedAt}>
-                <img src={website} alt="github link" />
-              </a>
-              <a href={active.github}>
-                <img src={github} alt="" />
-              </a>
+              {active.hostedAt ? (
+                <a href={active.hostedAt}>
+                  <img src={website} alt="github link" />
+                </a>
+              ) : null}
+
+              {active.github ? (
+                <a href={active.github}>
+                  <img src={github} alt="" />
+                </a>
+              ) : null}
             </div>
             <div className={style.description}>
               {documentToReactComponents(active.description.json)}
