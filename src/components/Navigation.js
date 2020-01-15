@@ -27,7 +27,6 @@ export default () => {
     <header className={navigationStyles.navigation}>
       <div>
         <Link to={'/'}>
-          <h1>AB</h1>
           <img
             src={`https:${data.contentfulMetadata.profilePicture.image.fixed.src}`}
             alt="profile"
@@ -40,7 +39,7 @@ export default () => {
           className={navigationStyles.navItem}
           activeClassName={navigationStyles.activeNavItem}
         >
-          Me Me Me
+          Home
         </Link>
         <Link
           to={'/projects'}
@@ -54,7 +53,7 @@ export default () => {
           className={navigationStyles.navItem}
           activeClassName={navigationStyles.activeNavItem}
         >
-          Other things I do
+          Hobbies
         </Link>
       </nav>
     </header>

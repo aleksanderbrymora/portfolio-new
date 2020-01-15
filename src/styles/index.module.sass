@@ -66,3 +66,24 @@ $box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 
 
   .right
     background-color: white
+
+@media (max-width: 700px)
+  .long-story
+    grid-template-columns: none
+    img
+      display: none
+
+  .other
+    grid-template-columns: none
+
+    h1
+      font-size: 28px
+      transform: translateY(2.5rem)
+
+  .hero
+    flex-direction: column
+
+    h1
+      text-align: center
+    p
+      width: 100%
