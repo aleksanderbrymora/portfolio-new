@@ -7,6 +7,7 @@ import Head from '../components/Head';
 import style from '../styles/projects.module.sass';
 import github from '../img/github.svg';
 import website from '../img/website.svg';
+import Project from '../components/Project';
 
 export default () => {
   const data = useStaticQuery(
@@ -44,9 +45,7 @@ export default () => {
 
   const handleProjectChange = slug => {
     const newProject = all.find(edge => edge.node.slug === slug);
-    console.log({ newProject });
     setActive(newProject.node);
-    console.log({ active });
   };
 
   return (
@@ -74,33 +73,7 @@ export default () => {
             </div>
           ))}
         </div>
-        {active.description ? (
-          <div className={style.project}>
-            <h1>{active.title}</h1>
-            <div className={style.dateLinks}>
-              <p>{active.createdAt}</p>
-              {active.hostedAt ? (
-                <a href={active.hostedAt}>
-                  <img src={website} alt="github link" />
-                </a>
-              ) : null}
-
-              {active.github ? (
-                <a href={active.github}>
-                  <img src={github} alt="" />
-                </a>
-              ) : null}
-            </div>
-            <div className={style.description}>
-              {documentToReactComponents(active.description.json)}
-            </div>
-            <img
-              className={style.showcase}
-              src={`https://${active.projectShowcase.file.url}`}
-              alt="app showcase"
-            />
-          </div>
-        ) : null}
+        <Project {...active} />
       </div>
     </Layout>
   );

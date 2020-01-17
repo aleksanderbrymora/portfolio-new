@@ -24,7 +24,7 @@ export default () => {
   `);
 
   return (
-    <header className={navigationStyles.navigation}>
+    <div className={navigationStyles.navigation}>
       <div>
         <Link to={'/'}>
           <img
@@ -56,6 +56,6 @@ export default () => {
           Hobbies
         </Link>
       </nav>
-    </header>
+    </div>
   );
 };

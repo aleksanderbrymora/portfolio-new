@@ -5,6 +5,7 @@ import style from '../styles/index.module.sass';
 import fingers from '../img/Fingers.gif';
 import { graphql, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { useSpring, animated, config } from 'react-spring';
 
 export default () => {
   let data = useStaticQuery(graphql`
@@ -33,13 +34,19 @@ export default () => {
 
   data = data.contentfulAboutMe;
 
+  const animateProps = useSpring({
+    from: { opacity: 0 },
+    opacity: 1,
+    config: config.slow,
+  });
+
   return (
     <Layout>
       <Head title={'About me'} />
-      <div className={style.hero}>
+      <animated.div style={animateProps} className={style.hero}>
         <h1>{data.landingTitle}</h1>
         {documentToReactComponents(data.landingParagraph.json)}
-      </div>
+      </animated.div>
       <div className={style.longStory}>
         <div>
           <h1>{data.myStoryTitle}</h1>
