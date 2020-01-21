@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import style from '../styles/projects.module.sass';
-import github from '../img/github.svg';
-import website from '../img/website.svg';
 import Project from '../components/Project';
 
 export default () => {
@@ -43,10 +40,13 @@ export default () => {
   const all = data.allContentfulProject.edges;
   const [active, setActive] = useState(featured.node);
 
-  const handleProjectChange = slug => {
-    const newProject = all.find(edge => edge.node.slug === slug);
-    setActive(newProject.node);
-  };
+  const projectChange = useCallback(
+    slug => {
+      const newProject = all.find(edge => edge.node.slug === slug);
+      setActive(newProject.node);
+    },
+    [all]
+  );
 
   return (
     <Layout>
@@ -57,7 +57,10 @@ export default () => {
             <div
               key={edge.node.slug}
               className={style.titles}
-              onClick={() => handleProjectChange(edge.node.slug)}
+              onClick={() => projectChange(edge.node.slug)}
+              onKeyDown={() => projectChange(edge.node.slug)}
+              role="button"
+              tabIndex="0"
             >
               <p className={style.indicator}>
                 {active.slug === edge.node.slug ? '♦' : ''}

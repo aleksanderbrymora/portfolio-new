@@ -38,6 +38,7 @@ export default () => {
     from: { opacity: 0 },
     opacity: 1,
     config: config.slow,
+    delay: 200,
   });
 
   return (
