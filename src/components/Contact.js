@@ -34,13 +34,39 @@ export default () => {
   return (
     <div className={style.contactContainer}>
       {open ? (
-        <div>
-          {data.map(link => (
-            <p>{link.title}</p>
-          ))}
+        <div className={style.iconStack}>
+          {data.map(link =>
+            link.isDownloadable ? (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={link.downloadLink.file.url}
+                download
+              >
+                <img
+                  className={style.image}
+                  src={link.icon.file.url}
+                  title={link.title}
+                  alt={link.title}
+                  key={link.title}
+                />
+              </a>
+            ) : (
+              <a target="_blank" rel="noopener noreferrer" href={link.url}>
+                <img
+                  className={style.image}
+                  src={link.icon.file.url}
+                  title={link.title}
+                  alt={link.title}
+                  key={link.title}
+                />
+              </a>
+            )
+          )}
           <img
             className={style.close}
             onClick={() => setOpen(false)}
+            alt="close contact"
             src={times}
           ></img>
         </div>
