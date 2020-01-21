@@ -19,5 +19,22 @@ module.exports = {
         host: `preview.contentful.com`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Aleks Brymora - Portfolio`,
+        short_name: `Portfolio`,
+        start_url: `/`,
+        background_color: `#161519`,
+        theme_color: `#FFCCCC`,
+        display: `standalone`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/projects/`, `/other/`],
+      },
+    },
   ],
 };
