@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import Head from '../components/Head';
 import { graphql, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import SEO from '../components/Seo';
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -30,7 +31,8 @@ export default () => {
 
   return (
     <Layout>
-      <Head title={'Other'} />
+      <SEO title={'Hobbies'} description={'A showcase of projects'} />
+      <Head title={'Hobbies'} />
       {data.allContentfulHobby.edges.map(edge => (
         <div key={edge.node.id}>
           <h1>{edge.node.title}</h1>

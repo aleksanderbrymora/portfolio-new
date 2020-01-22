@@ -5,12 +5,13 @@ import Layout from '../components/Layout';
 import Head from '../components/Head';
 import style from '../styles/projects.module.sass';
 import Project from '../components/Project';
+import SEO from '../components/Seo';
 
 export default () => {
   const data = useStaticQuery(
     graphql`
       query projects {
-        allContentfulProject(sort: {fields: created, order: DESC}) {
+        allContentfulProject(sort: { fields: created, order: DESC }) {
           edges {
             node {
               createdAt(formatString: "MMMM YYYY")
@@ -50,6 +51,7 @@ export default () => {
 
   return (
     <Layout>
+      <SEO title={'Projects'} description={'A showcase of projects'} />
       <Head title={'Projects'} />
       <div className={style.projects}>
         <div>

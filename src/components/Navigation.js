@@ -49,7 +49,7 @@ export default () => {
           Projects
         </Link>
         <Link
-          to={'/other'}
+          to={'/hobbies'}
           className={navigationStyles.navItem}
           activeClassName={navigationStyles.activeNavItem}
         >

@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     logo: 'AB',
-    title: 'Aleks Brymora portfolio',
+    title: 'Aleks Brymora - Portfolio',
     description: 'Hi, Im Aleks and this is my web development portfolio!',
     author: 'Aleks Brymora',
   },
@@ -35,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/`, `/projects/`, `/other/`],
+        precachePages: [`/projects`, `/hobbies`],
       },
     },
   ],
