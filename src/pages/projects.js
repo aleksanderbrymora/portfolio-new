@@ -10,7 +10,7 @@ export default () => {
   const data = useStaticQuery(
     graphql`
       query projects {
-        allContentfulProject(sort: { fields: created, order: DESC }) {
+        allContentfulProject(sort: {fields: created, order: DESC}) {
           edges {
             node {
               createdAt(formatString: "MMMM YYYY")
@@ -22,8 +22,8 @@ export default () => {
               slug
               title
               projectShowcase {
-                file {
-                  url
+                fluid(maxHeight: 400) {
+                  src
                 }
               }
               featured
