@@ -12,8 +12,8 @@ export default () => {
             fixed(
               resizingBehavior: THUMB
               cropFocus: CENTER
-              width: 300
-              height: 300
+              width: 100
+              height: 100
             ) {
               src
             }
@@ -49,7 +49,7 @@ export default () => {
           Projects
         </Link>
         <Link
-          to={'/other'}
+          to={'/hobbies'}
           className={navigationStyles.navItem}
           activeClassName={navigationStyles.activeNavItem}
         >

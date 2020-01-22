@@ -27,7 +27,7 @@ export default active => {
       </div>
       <img
         className={style.showcase}
-        src={`https://${active.projectShowcase.file.url}`}
+        src={`https://${active.projectShowcase.fluid.src}`}
         alt="app showcase"
       />
     </div>

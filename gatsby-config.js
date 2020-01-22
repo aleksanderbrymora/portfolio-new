@@ -5,7 +5,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     logo: 'AB',
-    title: 'Aleks Brymora',
+    title: 'Aleks Brymora - Portfolio',
+    description: 'Hi, Im Aleks and this is my web development portfolio!',
     author: 'Aleks Brymora',
   },
   plugins: [
@@ -28,12 +29,13 @@ module.exports = {
         background_color: `#161519`,
         theme_color: `#FFCCCC`,
         display: `standalone`,
+        icon: `src/img/favicon.svg`,
       },
     },
     {
       resolve: `gatsby-plugin-offline`,
       options: {
-        precachePages: [`/`, `/projects/`, `/other/`],
+        precachePages: [`/projects`, `/hobbies`],
       },
     },
   ],

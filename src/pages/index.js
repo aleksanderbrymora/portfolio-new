@@ -6,6 +6,7 @@ import fingers from '../img/Fingers.gif';
 import { graphql, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useSpring, animated, config } from 'react-spring';
+import SEO from '../components/Seo';
 
 export default () => {
   let data = useStaticQuery(graphql`
@@ -43,6 +44,7 @@ export default () => {
 
   return (
     <Layout>
+      <SEO title={'About me'} description={data.landingTitle} />
       <Head title={'About me'} />
       <animated.div style={animateProps} className={style.hero}>
         <h1>{data.landingTitle}</h1>
