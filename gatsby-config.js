@@ -29,6 +29,7 @@ module.exports = {
         background_color: `#161519`,
         theme_color: `#FFCCCC`,
         display: `standalone`,
+        icon: `src/img/favicon.svg`,
       },
     },
     {
