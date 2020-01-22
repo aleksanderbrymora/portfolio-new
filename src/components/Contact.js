@@ -29,7 +29,6 @@ export default () => {
 
   //   Transition bullshit
   data = data.contentfulMetadata.socialLinks;
-  console.log(data);
 
   return (
     <div className={style.contactContainer}>
