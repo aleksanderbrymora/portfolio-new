@@ -29,7 +29,6 @@ export default () => {
 
   //   Transition bullshit
   data = data.contentfulMetadata.socialLinks;
-  console.log(data);
 
   return (
     <div className={style.contactContainer}>
@@ -42,23 +41,31 @@ export default () => {
                 rel="noopener noreferrer"
                 href={link.downloadLink.file.url}
                 download
+                key={link.title}
+                role="button"
+                tabIndex="0"
               >
                 <img
                   className={style.image}
                   src={link.icon.file.url}
                   title={link.title}
                   alt={link.title}
-                  key={link.title}
                 />
               </a>
             ) : (
-              <a target="_blank" rel="noopener noreferrer" href={link.url}>
+              <a
+                key={link.title}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={link.url}
+                role="button"
+                tabIndex="0"
+              >
                 <img
                   className={style.image}
                   src={link.icon.file.url}
                   title={link.title}
                   alt={link.title}
-                  key={link.title}
                 />
               </a>
             )
@@ -66,12 +73,18 @@ export default () => {
           <img
             className={style.close}
             onClick={() => setOpen(false)}
+            onKeyDown={() => setOpen(false)}
             alt="close contact"
             src={times}
+            role="button"
           ></img>
         </div>
       ) : (
-        <p onClick={() => setOpen(true)} className={style.contact}>
+        <p
+          onClick={() => setOpen(true)}
+          onKeyDown={() => setOpen(true)}
+          className={style.contact}
+        >
           Contact
         </p>
       )}
