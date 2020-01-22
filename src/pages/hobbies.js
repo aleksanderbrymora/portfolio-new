@@ -26,9 +26,6 @@ export default () => {
     }
   `);
 
-  console.log(data);
-  console.log(data.allContentfulHobby.edges[0].node.embed.embed);
-
   return (
     <Layout>
       <SEO title={'Hobbies'} description={'A showcase of projects'} />
