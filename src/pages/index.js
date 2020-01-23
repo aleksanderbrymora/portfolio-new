@@ -7,6 +7,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useSpring, animated, config } from 'react-spring';
 import SEO from '../components/Seo';
+import Logos from '../components/Logos';
 
 export default () => {
   let data = useStaticQuery(graphql`
@@ -29,6 +30,33 @@ export default () => {
         otherParagraph {
           json
         }
+        backEndLogos {
+          file {
+            url
+          }
+          title
+        }
+        designLogos {
+          file {
+            url
+          }
+          title
+        }
+        frontEndLogos {
+          file {
+            url
+          }
+          title
+        }
+        learningNowLogos {
+          file {
+            url
+          }
+          title
+        }
+        skillsBackend
+        skillsDesign
+        skillsFrontend
       }
     }
   `);
@@ -70,6 +98,13 @@ export default () => {
             {documentToReactComponents(data.otherParagraph.json)}
           </div>
         </div>
+      </div>
+
+      <div>
+        <h1 id={style.skillsHeading}>{data.skillsTitle}</h1>
+        <Logos title={data.skillsFrontend} logos={data.frontEndLogos} />
+        <Logos title={data.skillsBackend} logos={data.backEndLogos} />
+        <Logos title={data.skillsDesign} logos={data.designLogos} />
       </div>
     </Layout>
   );

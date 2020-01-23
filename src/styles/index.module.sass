@@ -7,7 +7,7 @@ $blue: #0057FF
 $fPrimary: 'Archivo Narrow', sans-serif
 $fHeading: 'Prata', serif
 
-$box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 1)
+$box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15)
 
 *
   font-family: $fPrimary
@@ -50,10 +50,17 @@ $box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 
   grid-template-columns: 1fr 1fr
   grid-column-gap: 2rem
 
-  p
+  .left
+    background-color: $pink
     padding: 2rem 2rem 1rem
-    box-shadow: $box-shadow
     border-radius: 15px
+    box-shadow: $box-shadow
+
+  .right
+    background-color: white
+    padding: 2rem 2rem 1rem
+    border-radius: 15px
+    box-shadow: $box-shadow
 
   h1
     font-family: $fHeading
@@ -61,11 +68,32 @@ $box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25), -4px -4px 4px rgba(255, 255, 255, 
     font-size: 36px
     padding: 0 2rem
 
-  .left
-    background-color: $pink
+#skills-heading
+  margin-top: 2rem
+  font-family: $fHeading
 
-  .right
-    background-color: white
+.logo-feature
+  background-color: white
+  border-radius: 15px
+  padding: 0.5rem 1rem
+  margin: 1rem 0
+  box-shadow: $box-shadow
+
+  h2
+    font-size: 36px
+    margin: 0
+    padding 0
+
+  div
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr))
+    grid-gap: 1rem;
+    align-items: center
+    margin: 1rem
+
+    img
+      width: 100%
+      max-height: 70px
 
 @media (max-width: 700px)
   .long-story
