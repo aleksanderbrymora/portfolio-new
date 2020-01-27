@@ -7,6 +7,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useSpring, animated, config } from 'react-spring';
 import SEO from '../components/Seo';
+import Img from 'gatsby-image';
 
 export default () => {
   let data = useStaticQuery(graphql`
