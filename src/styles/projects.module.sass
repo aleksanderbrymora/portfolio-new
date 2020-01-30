@@ -23,13 +23,18 @@ $box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)
     display: grid
     grid-template-columns: 1fr 10fr
     align-items: center
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05)
+    background-color: white
+    margin: 0.5rem 0
+    border-radius: 15px
+    padding: 5px
+    cursor: pointer
 
     p
-      font-size: 14px
+      font-size: 18px
       margin: 0.3rem 0
       padding: 0
       font-weight: bold
-      cursor: pointer
 
     .text
       color: #575757
@@ -37,6 +42,17 @@ $box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)
 
     .text:hover
       color: #000000
+
+    .showcase-project
+      margin: 5px auto
+
+      .showcase-project-icon
+        height: 15px
+        margin: 0 2px
+
+    .active-title
+      color: black
+      text-decoration: underline
 
   .project
     box-shadow: $box-shadow
@@ -56,7 +72,7 @@ $box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2)
 
     .showcase
       max-width: 100%
-      max-height: 70vh
+      max-height: 90vh
       border-radius: 15px
       display: block
       margin: auto

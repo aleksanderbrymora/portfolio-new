@@ -28,6 +28,12 @@ export default () => {
                 }
               }
               featured
+              technologies {
+                file {
+                  url
+                }
+                title
+              }
             }
           }
         }
@@ -67,14 +73,28 @@ export default () => {
               <p className={style.indicator}>
                 {active.slug === edge.node.slug ? '♦' : ''}
               </p>
-              <p
-                className={
-                  style.text +
-                  (active.slug === edge.node.slug ? style.activeTitle : '')
-                }
-              >
-                {edge.node.title}
-              </p>
+              <div>
+                <p
+                  className={
+                    style.text +
+                    ' ' +
+                    (active.slug === edge.node.slug ? style.activeTitle : '')
+                  }
+                >
+                  {edge.node.title}
+                </p>
+                {edge.node.technologies ? (
+                  <div className={style.showcaseProject}>
+                    {edge.node.technologies.map(tech => (
+                      <img
+                        className={style.showcaseProjectIcon}
+                        alt={tech.title}
+                        src={tech.file.url}
+                      />
+                    ))}
+                  </div>
+                ) : null}
+              </div>
             </div>
           ))}
         </div>

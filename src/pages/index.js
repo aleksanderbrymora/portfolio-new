@@ -101,6 +101,14 @@ export default () => {
         </div>
         <img src={fingers} alt="fingers tapping eager to read about aleks" />
       </div>
+
+      <div>
+        <h1 id={style.skillsHeading}>{data.skillsTitle}</h1>
+        <Logos title={data.skillsFrontend} logos={data.frontEndLogos} />
+        <Logos title={data.skillsBackend} logos={data.backEndLogos} />
+        <Logos title={data.skillsDesign} logos={data.designLogos} />
+      </div>
+
       <div className={style.other}>
         <div>
           <h1>{data.aboutMeTitle}</h1>
@@ -114,13 +122,6 @@ export default () => {
             {documentToReactComponents(data.otherParagraph.json)}
           </div>
         </div>
-      </div>
-
-      <div>
-        <h1 id={style.skillsHeading}>{data.skillsTitle}</h1>
-        <Logos title={data.skillsFrontend} logos={data.frontEndLogos} />
-        <Logos title={data.skillsBackend} logos={data.backEndLogos} />
-        <Logos title={data.skillsDesign} logos={data.designLogos} />
       </div>
     </Layout>
   );
