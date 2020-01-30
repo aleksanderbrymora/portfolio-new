@@ -2,29 +2,29 @@ import React from 'react';
 import Layout from '../components/Layout';
 import Head from '../components/Head';
 import style from '../styles/index.module.sass';
-// import fingers from '../img/Fingers.gif';
+import fingers from '../img/Fingers.gif';
 import { graphql, useStaticQuery } from 'gatsby';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { useSpring, animated, config } from 'react-spring';
 import SEO from '../components/Seo';
-import Img from 'gatsby-image';
+// import Img from 'gatsby-image';
 import Logos from '../components/Logos';
 
 export default () => {
-  const fingers = useStaticQuery(graphql`
-    query {
-      allFile(
-        filter: {
-          relativePath: { eq: "Fingers" }
-          childImageSharp: {
-            fixed: (width: 240, height: 240) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-      )
-    }
-  `);
+  // const fingers = useStaticQuery(graphql`
+  //   query {
+  //     allFile(
+  //       filter: {
+  //         relativePath: { eq: "Fingers" }
+  //         childImageSharp: {
+  //           fixed: (width: 240, height: 240) {
+  //             ...GatsbyImageSharpFixed
+  //           }
+  //         }
+  //       }
+  //     )
+  //   }
+  // `);
 
   let data = useStaticQuery(graphql`
     query {
