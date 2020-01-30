@@ -4,7 +4,7 @@ import style from '../styles/contact.module.sass';
 import times from '../img/times-solid.svg';
 
 export default () => {
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
   let data = useStaticQuery(graphql`
     query {
       contentfulMetadata {
